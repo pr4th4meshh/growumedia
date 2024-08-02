@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+@font-face {
+  font-family: Bulgatti;
+  src: url("../public/fonts/Bulgatti.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Monument;
+  src: url("../public/fonts/MonumentExtended-Ultrabold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Carousel.css */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-container {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(200%);
+}
+
+.carousel-track > div {
+  min-width: 15%;
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.text-outline {
+  position: relative;
+  display: inline-block;
+}
+
+.text-outline::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: #2e2e2e; /* Outline color */
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 3px;
+  background-clip: text;
+  opacity: 1;
+  transform: scale(1);
+}
